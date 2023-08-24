@@ -1,0 +1,15 @@
+{
+    "menus": [
+        {
+            "icon": "Material.ChatProcessingOutline",
+            "tip": "聊天",
+            "component": "ChatPage"
+        },
+        {
+            "icon": "Material.Contacts",
+            "tip": "通讯录",
+            "component": "ContactsPage"
+        }
+    ],
+    "": {}
+}
