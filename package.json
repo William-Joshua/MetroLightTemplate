@@ -1,0 +1,37 @@
+{
+  "name": "metrolighttemplate",
+  "version": "1.0.0",
+  "description": "MahApp.Metro .net 6.0 Template",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "precommit": "dotnet build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/William-Joshua/MetroLightTemplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/William-Joshua/MetroLightTemplate/issues"
+  },
+  "homepage": "https://github.com/William-Joshua/MetroLightTemplate#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "husky": "^8.0.3"
+  }
+}
