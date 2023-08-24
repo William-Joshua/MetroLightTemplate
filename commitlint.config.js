@@ -15,7 +15,7 @@ module.exports = {
           'fix',        // 修复问题/BUG
           'perf',       // 优化/性能提升
           'style',      // 代码风格相关无影响运行结果的
-          'docs',       // 文档/注释
+          'docs',       // 文档/f
           'test',       // 测试相关
           'refactor',   // 重构
           'build',      // 对构建系统或者外部依赖项进行了修改
