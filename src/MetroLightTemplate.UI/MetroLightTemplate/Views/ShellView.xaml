@@ -5,14 +5,42 @@
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Height="450" Width="800"
+    xmlns:models="clr-namespace:MetroLightTemplate.Models"
+    Height="768" Width="1024"
     Title="MetroLight Template" TitleCharacterCasing="Normal"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <StackPanel>
-        <Label Content="Hello please write your name" />
-        <TextBox x:Name="InputName" />
-        <Button x:Name="SayHello"
-            Content="Click Me" />
-    </StackPanel>
+    <mah:MetroWindow.Resources>
+        <ResourceDictionary>
+            <!--  This is the template for all menu items. In this sample we use the glyph items.  -->
+            <DataTemplate x:Key="HamburgerMenuItem" DataType="{x:Type models:MenuItem}">
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+                            Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength, Mode=OneWay}" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="{Binding Icon}"
+                        Focusable="False" />
+                    <TextBlock Grid.Column="1"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="{Binding Label}" />
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </mah:MetroWindow.Resources>
+    <Grid>
+        <mah:HamburgerMenu x:Name="hamburContainer"
+            DisplayMode="Compactline" HamburgerWidth="48"
+            HamburgerVisibility="Collapsed"
+            ItemTemplate="{StaticResource HamburgerMenuItem}"
+            ItemsSource="{Binding MenuItems}"
+            OptionsItemTemplate="{StaticResource HamburgerMenuItem}"
+            OptionsItemsSource="{Binding OptionItems}"
+        />
+    </Grid>
 </mah:MetroWindow>
